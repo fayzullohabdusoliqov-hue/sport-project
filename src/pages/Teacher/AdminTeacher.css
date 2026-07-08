@@ -1,0 +1,158 @@
+.teachers {
+    width: 100%;
+    padding: 30px;
+    background: var(--background);
+    box-sizing: border-box;
+}
+
+.teachers_title {
+    margin-bottom: 25px;
+    color: var(--text);
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.teachers__table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.tabel__header {
+    background: var(--gradient);
+}
+
+.table__tr {
+    transition: .3s;
+}
+
+.table_th {
+    padding: 18px;
+    text-align: left;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.table__main tr {
+    border-bottom: 1px solid var(--border);
+    transition: .25s;
+}
+
+.table__main tr:hover {
+    background: var(--surface-2);
+}
+
+.table__main td {
+    padding: 16px 18px;
+    color: var(--text);
+    font-size: 14px;
+}
+
+.table__footer {
+    background: var(--surface);
+}
+
+.table__footer td {
+    padding: 15px 18px;
+    color: var(--text);
+    border-top: 1px solid var(--border);
+}
+
+.table__btn {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 8px 14px;
+    border-radius: 8px;
+    color: #fff;
+    font-weight: 600;
+    transition: .25s;
+}
+
+.table__btn.edit {
+    background: #2196f3;
+}
+
+.table__btn.edit:hover {
+    background: #1976d2;
+}
+
+.table__btn.delete {
+    background: var(--primary);
+}
+
+.table__btn.delete:hover {
+    background: var(--button-hover);
+}
+
+.table__buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.null_td{
+    background: var(--surface-2);
+    color: var(--text);
+    height: 350px;
+    text-align: center;
+}
+@media (max-width:768px){
+
+    .teachers{
+        padding:20px;
+    }
+
+    .teachers__table{
+        display:block;
+        overflow-x:auto;
+        white-space:nowrap;
+    }
+
+    .teachers_title{
+        font-size:22px;
+    }
+
+    .table_th,
+    .table__main td{
+        padding:14px;
+    }
+
+}
+
+@media (max-width:390px){
+
+    .teachers{
+        padding:15px;
+    }
+
+    .teachers_title{
+        font-size:20px;
+        margin-bottom:15px;
+    }
+
+    .teachers__table{
+        min-width:750px;
+    }
+
+    .table_th{
+        font-size:13px;
+        padding:12px;
+    }
+
+    .table__main td{
+        font-size:13px;
+        padding:12px;
+    }
+
+    .table__btn{
+        padding:6px 10px;
+        font-size:12px;
+    }
+
+}

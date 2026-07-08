@@ -1,0 +1,42 @@
+:root {
+  --primary: #e50914;      
+  --primary-dark: #b30000;
+  --background: #0d0d0d;    
+  --surface: #1a1a1a;       
+  --surface-2: #262626;    
+  --text: #ffffff;
+  --text-hover: #b3b3b3;
+  --border: #333333;
+  --button: #e50914;
+  --button-hover: #ff1f2d;
+  --shadow: 0 8px 20px rgba(229, 9, 20, 0.35);
+  --radius: 12px;
+  --gradient: linear-gradient(135deg, #ba0009, #550000);
+}
+
+body{
+  background: var(--background);
+  color: var(--text);
+  font-family: "Roboto Condensed";
+}
+.conteyner{
+  max-width: 1200px;
+  min-width: 360px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+button{
+  cursor: pointer;
+}
+ul,ol{
+  list-style: none;
+}
+a{
+  text-decoration: none;
+}

@@ -1,0 +1,6 @@
+.dashboard__content{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 150px;
+    gap: 15px;
+}
