@@ -1,4 +1,4 @@
-.teacher__form{
+.group__form{
     position: fixed;
     top: 50%;
     left: 50%;
@@ -11,32 +11,29 @@
     border-radius: var(--radius);
     z-index: 100;
 }
-.teacher__form > .form__content{
+.group__form > .form__content{
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 30px;
 }
-.teacher_title {
+.group_title {
     color: var(--primary);
     font-size: 30px;
     font-weight: 700;
 }
-
-.teacher__content {
+.group__content {
     display: flex;
     flex-direction: column;
     gap: 8px;
     margin-bottom: 20px;
 }
-
-.teacher_label {
+.group_label {
     color: var(--text);
     font-size: 16px;
     font-weight: 600;
 }
-
-.teacher_input{
+.group_input{
     width: 100%;
     padding: 12px 15px;
     background: var(--surface-2);
@@ -47,12 +44,7 @@
     outline: none;
     transition: .3s;
 }
-
-.teacher_input::placeholder {
-    color: var(--text-hover);
-}
-
-.teacher_btn {
+.group_btn {
     width: 100%;
     margin-top: 15px;
     padding: 14px;
@@ -65,27 +57,8 @@
     cursor: pointer;
     transition: .3s;
 }
-
-.teacher_btn:hover {
+.group_btn:hover {
     background: var(--button-hover);
     transform: translateY(-2px);
     box-shadow: var(--shadow);
 }
-.close_btn {
-    width: 40px;
-    height: 40px;
-    border: none;
-    border-radius: var(--radius);
-    background: var(--gradient);
-    color: var(--text);
-    font-size: 17px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: .3s;
-}
-
-.close_btn:hover {
-    background: var(--button-hover);
-    transform: translateY(-2px);
-    box-shadow: var(--shadow);
-}   

@@ -1,9 +1,9 @@
 import React from 'react'
-import logo from "../../../public/img/logoImg.png"
+import logo from "../../../public/icon/logo.png"
 import "./AdminHeader.css"
 import { useLocation, useNavigate } from 'react-router-dom'
 
-function AdminHeader() {
+function AdminHeader({setOpenModal}) {
   const profile = localStorage.getItem("profile")
   const profileObject = JSON.parse(profile)
   const navigate = useNavigate("")
@@ -17,6 +17,12 @@ function AdminHeader() {
         <small className="header_small"><strong className="small_storng">password: </strong> {profileObject.password}</small>
       </div>
     </div>
+    {
+      location.pathname !== "/admin/home" && location.pathname !== "/admin/teacher"? <form className="search__form">
+        <input type="text" className="search_input" placeholder='search...'/>
+        <button className="search_btn">Qidirish</button>
+      </form> : <></>
+    }
     <div className="header__btn">
       <button className="header_btn" onClick={(evt) => {
         evt.preventDefault()
@@ -27,7 +33,7 @@ function AdminHeader() {
         location.pathname !== "/admin/home" ? 
           <button className="header_btn" onClick={(evt) => {
             evt.preventDefault()
-            navigate("/logout")
+            setOpenModal(true)
           }}>add</button> : <></>
       }
     </div>

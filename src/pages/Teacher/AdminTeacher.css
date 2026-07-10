@@ -1,6 +1,5 @@
 .teachers {
     width: 100%;
-    padding: 30px;
     background: var(--background);
     box-sizing: border-box;
 }
@@ -33,7 +32,7 @@
 
 .table_th {
     padding: 18px;
-    text-align: left;
+    text-align: center;
     color: #fff;
     font-size: 15px;
     font-weight: 600;
@@ -52,41 +51,16 @@
     padding: 16px 18px;
     color: var(--text);
     font-size: 14px;
+    text-align: center;
 }
 
 .table__footer {
     background: var(--surface);
 }
 
-.table__footer td {
-    padding: 15px 18px;
-    color: var(--text);
-    border-top: 1px solid var(--border);
-}
-
-.table__btn {
-    border: none;
-    outline: none;
-    cursor: pointer;
-    padding: 8px 14px;
-    border-radius: 8px;
-    color: #fff;
-    font-weight: 600;
-    transition: .25s;
-}
-
 .table__btn.edit {
     background: #2196f3;
 }
-
-.table__btn.edit:hover {
-    background: #1976d2;
-}
-
-.table__btn.delete {
-    background: var(--primary);
-}
-
 .table__btn.delete:hover {
     background: var(--button-hover);
 }
@@ -95,12 +69,30 @@
     display: flex;
     gap: 10px;
 }
-
 .null_td{
     background: var(--surface-2);
     color: var(--text);
     height: 350px;
     text-align: center;
+}
+.table_btn{
+    background: var(--button);
+    color: var(--text);
+    border-radius: 10px;
+    height: 35px;
+}
+.edit{
+    width: 50px;
+}
+.delete{
+    width: 70px;
+}
+
+.table_td:nth-child(7){
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    gap: 5px;
 }
 @media (max-width:768px){
 

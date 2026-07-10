@@ -11,7 +11,8 @@ function AdminTeacher() {
       const data = await res.json()
 
       if(data){
-        const array = Object.values(data)
+        const array = Object.entries(data).map(([key, value]) => ({...value, firebaseKey: key}))
+        console.log(array)
         setTeachers(array)
       }else{
         setTeachers(data)
@@ -26,7 +27,7 @@ function AdminTeacher() {
 
   return (<main className='site__main admin__main'>
     <section className="teachers">
-      <h1 className="teachers_title">EVER TEACHERS</h1>
+      <h1 className="teachers_title">EVERY TEACHERS</h1>
       <table className="teachers__table">
         <thead className="tabel__header">
             <tr className="table__tr">
@@ -48,7 +49,6 @@ function AdminTeacher() {
                     </tr>
             }
         </tbody>
-        <tfoot className="table__footer"></tfoot>
       </table>
     </section>
   </main>)

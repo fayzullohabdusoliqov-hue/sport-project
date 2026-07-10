@@ -1,13 +1,26 @@
-import React from 'react'
+import React, { useState } from 'react'
 import "./AdminLayout.css"
 import AdminHeader from '../components/Header/AdminHeader'
 import AdminSidebar from '../components/Sidebar/AdminSidebar'
-import { Outlet } from 'react-router-dom'
+import { Outlet, useLocation } from 'react-router-dom'
+import AdminTeacherModal from '../components/Modal/AdminTeacherModal'
+import AdminGroupModal from '../components/Modal/AdminGroupModal'
+import AdminProductModal from '../components/Modal/AdminProductModal'
 
 function AdminLayout() {
+  const [openModal, setOpenModal] = useState(false)
+  const location = useLocation()
+
   return (<div className='admin__layout'>
-    <AdminHeader/>
+    <AdminHeader setOpenModal={setOpenModal}/>
     <AdminSidebar/>
+     {
+      openModal && (
+        location.pathname === "/admin/teacher"? <AdminTeacherModal setOpenModal={setOpenModal}/> : 
+        location.pathname === "/admin/group" ? <AdminGroupModal setOpenModal={setOpenModal}/> :
+        location.pathname === "/admin/shop" ? <AdminProductModal setOpenModal={setOpenModal}/> :<></>
+      )
+     }
     <Outlet/>
   </div>)
 }

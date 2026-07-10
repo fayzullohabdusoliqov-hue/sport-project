@@ -11,6 +11,7 @@ import Logout from './layouts/Logout'
 import AdminShop from './pages/Shop/AdminShop'
 import AdminTeacher from './pages/Teacher/AdminTeacher'
 import AdminGroup from './pages/Group/AdminGroup'
+import AdminGroupDetail from './pages/GroupDetail/AdminGroupDetail'
 
 function App() {
   const router = createBrowserRouter([
@@ -45,6 +46,10 @@ function App() {
         {
           path: "group",
           element: <AdminGroup/>
+        },
+        {
+          path: "groupDetail/:firebaseKey",
+          element: <AdminGroupDetail/>
         }
       ]
     },

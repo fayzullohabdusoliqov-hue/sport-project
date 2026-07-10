@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import "./Logout.css"
-import imgLogo from "../../public/img/logoImg.png"
+import imgLogo from "../../public/icon/logo.png"
 import Loading from '../components/Loading/Loading'
 import { useNavigate } from 'react-router-dom'
 

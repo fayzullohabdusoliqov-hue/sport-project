@@ -1,0 +1,97 @@
+.group_title {
+    color: var(--text);
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+.group__wraper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+/* Card */
+
+.group_count {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background: var(--gradient);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text);
+    font-size: 18px;
+    font-weight: 700;
+}
+
+/* Buttons */
+
+.group_actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 18px;
+}
+
+.group_btn {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+    color: var(--text);
+    font-size: 14px;
+    font-weight: 600;
+    transition: .3s;
+}
+
+.group_btn.edit {
+    background: #f59e0b;
+}
+
+.group_btn.edit:hover {
+    background: #d97706;
+}
+
+.group_btn.delete {
+    background: var(--button);
+}
+
+.group_btn.delete:hover {
+    background: var(--button-hover);
+}
+
+@media (max-width: 390px) {
+    .group {
+        padding: 20px 15px;
+    }
+
+    .group_title {
+        font-size: 24px;
+        text-align: center;
+    }
+
+    .group__wraper {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .group_card {
+        padding: 18px;
+    }
+
+    .group_subtitle {
+        font-size: 18px;
+    }
+
+    .group_small {
+        font-size: 13px;
+    }
+
+    .group_count {
+        width: 45px;
+        height: 45px;
+        font-size: 16px;
+    }
+}
