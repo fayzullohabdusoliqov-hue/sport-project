@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 
 function TeachersTableItem({teacher, index, setOpenModal, setFirebaseKey}) {
-
   async function deleteTeacher(firebaseKey) {
     try {
       const res = await fetch("https://sport-project-18919-default-rtdb.firebaseio.com/profile.json")

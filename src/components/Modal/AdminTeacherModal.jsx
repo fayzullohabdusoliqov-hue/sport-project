@@ -109,12 +109,14 @@ function AdminTeacherModal({setOpenModal, firebaseKey}) {
           setOpenModal(false)
         }}>&times;</button>  
       </div>
-      <div className="teacher__content">
-        <label htmlFor="name" className="teacher_label">ism:</label>
-        <input id='name' type="text" className="teacher_input" onChange={(evt) => {
-          setTeacher({...teacher, name: evt.target.value})
-        }} value={teacher?.name}/>
-      </div>
+      {
+        firebaseKey? <></> : <div className="teacher__content">
+          <label htmlFor="name" className="teacher_label">ism:</label>
+          <input id='name' type="text" className="teacher_input" onChange={(evt) => {
+            setTeacher({...teacher, name: evt.target.value})
+          }} value={teacher?.name}/>
+        </div>
+      }
       <div className="teacher__content">
         <label htmlFor="surName" className="teacher_label">familiya:</label>
         <input id='surName' type="text" className="teacher_input" onChange={(evt) => {

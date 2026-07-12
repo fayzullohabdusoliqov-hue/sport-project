@@ -3,12 +3,15 @@ import "./AdminGroupDetail.css"
 import { Navigate, useNavigate, useParams } from 'react-router-dom'
 import AdminGroupItem from '../../components/AdminGroupItem/AdminGroupItem'
 import AdminGroupModal from '../../components/Modal/AdminGroupModal'
+import AdminStudentModal from '../../components/Modal/AdminStudentModal'
 
 function AdminGroupDetail() {
   const {firebaseKey} = useParams()
   const navigate = useNavigate("")
   const [group, setGroup] = useState([])
   const [openEditModal, setOpenEditModal] = useState(false)
+  const [openModal, setOpenModal] = useState(false)
+  const [editObject, setEditObject] = useState({})
 
   async function getGroup(){
     try{
@@ -60,7 +63,7 @@ function AdminGroupDetail() {
             </div>
             <div className="group__detail-wraper">
                 {
-                  group?.students ? group?.students?.map((el, index) => <AdminGroupItem student={el} index={index} key={index}/>)
+                  group?.students ? group?.students?.map((el, index) => <AdminGroupItem student={el} index={index} key={index} setOpenModal={setOpenModal} setEditObject={setEditObject}/>)
                    : <div className='null__group'>
                     <h3 className="null_title">O'quvchilar mavjud emas</h3>
                    </div>
@@ -70,6 +73,9 @@ function AdminGroupDetail() {
     </section>
     {
       openEditModal && <AdminGroupModal setOpenModal={setOpenEditModal} firebaseKey={firebaseKey}/>
+    }
+    {
+      openModal && <AdminStudentModal setOpenModal={setOpenModal} editObject={editObject}/>
     }
   </main>)
 }

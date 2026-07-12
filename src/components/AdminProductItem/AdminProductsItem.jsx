@@ -1,7 +1,7 @@
 import React from 'react'
 import "./AdminProductsItem.css"
 
-function AdminProductsItem({product}) {
+function AdminProductsItem({product, setFirebaseKey, setOpenModal}) {
 
   async function deleteProduct(firebaseKey){
     try{
@@ -28,7 +28,11 @@ function AdminProductsItem({product}) {
       <small className="products_small">{product.howMany}</small>
     </div>
     <div className="products__btn">
-      <button className="products_btn edit">edit</button>
+      <button className="products_btn edit" onClick={(evt) => {
+        evt.preventDefault()
+        setOpenModal(true)
+        setFirebaseKey(product.firebaseKey)
+      }}>edit</button>
       <button className="products_btn delete" onClick={(evt) => {
         evt.preventDefault()
         deleteProduct(product.firebaseKey)

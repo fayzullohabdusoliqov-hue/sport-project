@@ -86,11 +86,11 @@
 }
 
 /* Edit */
-.edit{
+.edit_item-btn{
   background: var(--button);
 }
 
-.edit:hover{
+.edit_item-btn:hover{
   background: var(--button);
   transform: translateY(-2px);
 }

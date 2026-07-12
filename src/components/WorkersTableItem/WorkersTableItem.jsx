@@ -1,14 +1,13 @@
 import React from 'react'
 
-function WorkersTableItem({workrer, index, setOpenModal, setFirebaseKey}) {
-
+function WorkersTableItem({worker, index, setOpenModal, setFirebaseKey}) {
   async function deleteTeacher(firebaseKey) {
     try {
       const res = await fetch("https://sport-project-18919-default-rtdb.firebaseio.com/profile.json")
       const data = await res.json()
 
       const profiles = Object.values(data)
-      const deleteProfile = profiles.filter((el) => el.password !== teacher.password)
+      const deleteProfile = profiles.filter((el) => el.password !== worker.password)
 
       const resT = await fetch(`https://sport-project-18919-default-rtdb.firebaseio.com/workers/${firebaseKey}.json`,{
         method: "DELETE",
@@ -33,20 +32,20 @@ function WorkersTableItem({workrer, index, setOpenModal, setFirebaseKey}) {
 
   return (<tr className='table__tr'>
     <td className="table_td">{index + 1}</td>
-    <td className="table_td">{teacher.name}</td>
-    <td className="table_td">{teacher.surName}</td>
-    <td className="table_td">{teacher.monthlySalary} so'm</td>
-    <td className="table_td">{teacher.group}</td>
-    <td className="table_td">{teacher.password}</td>
+    <td className="table_td">{worker.name}</td>
+    <td className="table_td">{worker.surName}</td>
+    <td className="table_td">{worker.monthlySalary} so'm</td>
+    <td className="table_td">{worker.role}</td>
+    <td className="table_td">{worker.password}</td>
     <td className="table_td">
       <button className="table_btn edit" onClick={(evt) => {
         evt.preventDefault()
         setOpenModal(true)
-        setFirebaseKey(teacher.firebaseKey)
+        setFirebaseKey(worker.firebaseKey)
       }}>edit</button>
       <button className="table_btn delete" onClick={(evt) => {
         evt.preventDefault()
-        deleteTeacher(teacher.firebaseKey)
+        deleteTeacher(worker.firebaseKey)
       }}>delete</button>
     </td>
   </tr>)

@@ -7,6 +7,7 @@ import AdminTeacherModal from '../components/Modal/AdminTeacherModal'
 import AdminGroupModal from '../components/Modal/AdminGroupModal'
 import AdminProductModal from '../components/Modal/AdminProductModal'
 import AdminStudentModal from '../components/Modal/AdminStudentModal'
+import AdminWorkerModal from '../components/Modal/AdminWorkerModal'
 
 function AdminLayout() {
   const [openModal, setOpenModal] = useState(false)
@@ -21,7 +22,8 @@ function AdminLayout() {
         location.pathname === "/admin/teacher"? <AdminTeacherModal setOpenModal={setOpenModal}/> : 
         location.pathname === "/admin/group" ? <AdminGroupModal setOpenModal={setOpenModal}/> :
         location.pathname === "/admin/shop" ? <AdminProductModal setOpenModal={setOpenModal}/> :
-        location.pathname === `/admin/groupDetail/${firebaseKey}` ? <AdminStudentModal setOpenModal={setOpenModal}/> : <></>
+        location.pathname === `/admin/groupDetail/${firebaseKey}` ? <AdminStudentModal setOpenModal={setOpenModal}/> : 
+        location.pathname === "/admin/worker" ? <AdminWorkerModal setOpenModal={setOpenModal}/> :<></>
       )
      }
     <Outlet/>

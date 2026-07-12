@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import "./AdminGroupModal.css"
+import { useParams } from 'react-router-dom'
 
 function AdminGroupModal({setOpenModal, firebaseKey}) {
   const [group, setGroup] = useState({
@@ -17,7 +18,6 @@ function AdminGroupModal({setOpenModal, firebaseKey}) {
             body: JSON.stringify(group)
         })
         const data = await res.json()
-        console.log(data)
     }catch(err){
         console.log(err.message)
     }finally{

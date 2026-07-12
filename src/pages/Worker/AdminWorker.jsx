@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import "./AdminWorker.css"
 import WorkersTableItem from '../../components/WorkersTableItem/WorkersTableItem'
+import AdminWorkerModal from '../../components/Modal/AdminWorkerModal'
 
 function AdminWorker() {
   const [workers, setWorkers] = useState([])
@@ -57,6 +58,9 @@ function AdminWorker() {
             </tfoot>
         </table>
       </section>
+      {
+        openModal && <AdminWorkerModal setOpenModal={setOpenModal} firebaseKey={firebaseKey}/>
+      }
   </main>)
 }
 
