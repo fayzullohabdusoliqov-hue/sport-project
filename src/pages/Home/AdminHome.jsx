@@ -3,58 +3,128 @@ import "./AdminHome.css"
 import CardAdminHome from '../../components/CardAdminHome/CardAdminHome'
 
 function AdminHome() {
-  const [info, setInfo] = useState({
-    teachers: 0,
-    students: 0,
-    workers: 0,
-    groups: 0,
-    products: 0,
-    roules: 0
-  })
+  const [teachers, setTeachers] = useState(0)
+  const [students, setStudents] = useState(0)
+  const [workers, setWorkers] = useState(0)
+  const [roules, setRoules] = useState(0)
+  const [products, setProducts] = useState(0)
+  const [groups, setGroups] = useState(0)
 
-  async function getInfo(){
+  async function getTeachers(){
     try{
-      const resT = await fetch(`https://sport-project-18919-default-rtdb.firebaseio.com/teachers.json`)
-      const dataT = await resT.json()
-      const arrayT = Object.values(dataT)
-      console.log(arrayT)
+      const res = await fetch("https://sport-project-18919-default-rtdb.firebaseio.com/teachers.json")
+      const data = await res.json()
       
-      const resG = await fetch(`https://sport-project-18919-default-rtdb.firebaseio.com/groups.json`)
-      const dataG = await resG.json()
-      const arrayG = Object.values(dataG)
-      console.log(arrayG)
-
-      const resP = await fetch(`https://sport-project-18919-default-rtdb.firebaseio.com/praducts.json`)
-      const dataP = await resP.json()
-      const arrayP = Object.values(dataP)
-      console.log(arrayP)
-
-      const resR = await fetch(`https://sport-project-18919-default-rtdb.firebaseio.com/rouls.json`)
-      const dataR = await resR.json()
-      const arrayR = Object.values(dataR)
-      console.log(arrayR)
-
-      const resW = await fetch(`https://sport-project-18919-default-rtdb.firebaseio.com/profile.json`)
-      const dataW = await resW.json()
-      const arrayW = Object.values(dataW)
-      console.log(arrayW)
+      if(data){
+        const array = await Object.values(data)
+        setTeachers(array.length)
+      }else{
+        setTeachers(0)
+      }
     }catch(err){
       console.log(err.message)
     }
   }
+  async function getStudents(){
+    try{
+      const res = await fetch("https://sport-project-18919-default-rtdb.firebaseio.com/groups.json")
+      const data = await res.json()
+      
+      if(data){
+        const array = await Object.values(data)
+        const students = array.map((el) => el.students ? el.students.length : 0)
+
+        let everyStudents = 0
+        for(let i = 0; i < students.length; i++){
+          everyStudents += students[i]
+        }
+        setStudents(everyStudents)
+      }else{
+        setStudents(0)
+      }
+    }catch(err){
+      console.log(err.message)
+    }
+  }
+  async function getWorkers(){
+    try{
+      const res = await fetch("https://sport-project-18919-default-rtdb.firebaseio.com/profile.json")
+      const data = await res.json()
+
+      if(data){
+        const array = await Object.values(data)
+        setWorkers(array.length)
+      }else{
+        setWorkers(0)
+      }
+    }catch(err){
+      console.log(err.message)
+    }
+  }
+  async function getRoules(){
+    try{
+      const res = await fetch("https://sport-project-18919-default-rtdb.firebaseio.com/roules.json")
+      const data = await res.json()
+      
+      if(data){
+        const array = await Object.values(data)
+        setRoules(array.length)
+      }else{
+        setRoules(0)
+      }
+    }catch(err){
+      console.log(err.message)
+    }
+  }
+  async function getProducts(){
+    try{
+      const res = await fetch("https://sport-project-18919-default-rtdb.firebaseio.com/products.json")
+      const data = await res.json()
+      
+      if(data){
+        const array = await Object.values(data)
+        setProducts(array.length)
+      }else{
+        setProducts(0)
+      }
+    }catch(err){
+      console.log(err.message)
+    }
+  }
+  async function getGroups(){
+    try{
+      const res = await fetch("https://sport-project-18919-default-rtdb.firebaseio.com/groups.json")
+      const data = await res.json()
+      
+      if(data){
+        const array = await Object.values(data)
+        setGroups(array.length)
+      }else{
+        setGroups(0)
+      }
+    }catch(err){
+      console.log(err.message)
+    }
+  }
+
   useEffect(() => {
-    getInfo()
+    getTeachers()
+    getStudents()
+    getWorkers()
+    getRoules()
+    getProducts()
+    getGroups()
   },[])
   return (<main className='site__main admin__main'>
     <section className="dashboard">
       <h1 className="dashboard_title">DASHBOARD</h1>
       <div className="dashboard__content">
-        <CardAdminHome title={"Teachers"} info={info?.teachers}/>
-        <CardAdminHome title={"Students"} info={info?.students}/>
-        <CardAdminHome title={"Workers"} info={info?.workers}/>
-        <CardAdminHome title={"Roules"} info={info?.rouls}/>
-        <CardAdminHome title={"Products"} info={info?.praducts}/>
-        <CardAdminHome title={"Groups"} info={info?.groups}/>
+        <CardAdminHome title={"Teachers"} info={teachers}/>
+        <CardAdminHome title={"Students"} info={students}/>
+        <CardAdminHome title={"Workers"} info={workers}/>
+        <CardAdminHome title={"Roules"} info={roules}/>
+        <CardAdminHome title={"Products"} info={products}/>
+        <CardAdminHome title={"Groups"} info={groups}/>
       </div>
     </section>
   </main>)

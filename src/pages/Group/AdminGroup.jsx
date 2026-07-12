@@ -9,8 +9,13 @@ function AdminGroup() {
     try{
       const res = await fetch("https://sport-project-18919-default-rtdb.firebaseio.com/groups.json")
       const data = await res.json()
-      const array = await Object.entries(data).map(([key, value]) => ({...value, firebaseKey: key}))
-      setGroups(array)
+
+      if(data){
+        const array = await Object.entries(data).map(([key, value]) => ({...value, firebaseKey: key}))
+        setGroups(array)
+      }else{
+        setGroups(data)
+      }
     }catch(err){
       console.log(err.message)
     }
@@ -24,7 +29,10 @@ function AdminGroup() {
       <h1 className="group_title">EVERY GROUPS</h1>
       <div className="group__wraper">
         {
-          groups.map((el, index) => <CardAdminGroup group={el} key={index}/>)
+          groups? groups.map((el, index) => <CardAdminGroup group={el} key={index}/>) 
+           : <div className='null__group'>
+            <h3 className="null_title">Guruhlar mavjud emas</h3>
+           </div> 
         }
       </div>
     </section>

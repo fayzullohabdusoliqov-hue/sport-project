@@ -1,12 +1,22 @@
 .group__detail{
     width: 100%;
 }
-.group__detail-content{
+.group__detail-header{
     width: 100%;
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+.group_detail-title{
+    margin-bottom: 0px;
+}
+.group__detail-head{
+    display: flex;
+    align-items: flex-start;
     justify-content: center;
-    gap: 780px;
+    flex-direction: column;
+    gap: 10px;
 }
 .group__detail-btn{
     display: flex;
@@ -31,4 +41,7 @@
 }
 .delete{
     width: 100px;
+}
+.group__detail-wraper{
+    padding-bottom: 40px;
 }

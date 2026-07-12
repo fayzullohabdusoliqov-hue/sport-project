@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import "./AdminTeacher.css"
 import TeachersTableItem from '../../components/TeachersTableItem/TeachersTableItem'
+import AdminTeacherModal from '../../components/Modal/AdminTeacherModal'
 
 function AdminTeacher() {
   const [teachers, setTeachers] = useState([])
+  const [openModal, setOpenModal] = useState(false)
+  const [firebaseKey, setFirebaseKey] = useState("")
   
   async function getTeachers(){
     try{
@@ -12,7 +15,6 @@ function AdminTeacher() {
 
       if(data){
         const array = Object.entries(data).map(([key, value]) => ({...value, firebaseKey: key}))
-        console.log(array)
         setTeachers(array)
       }else{
         setTeachers(data)
@@ -43,14 +45,22 @@ function AdminTeacher() {
         <tbody className="table__main">
             {
                 teachers? 
-                  teachers?.map((el, index) => <TeachersTableItem key={index} teacher={el} index={index}/>) 
+                  teachers?.map((el, index) => <TeachersTableItem key={index} teacher={el} index={index} setOpenModal={setOpenModal} setFirebaseKey={setFirebaseKey}/>) 
                     :<tr className='table__tr null__tr'>
                       <td className="table_td null_td" colSpan={7}><h3 className="teachers_null-title">O'qtuvchilar mavjud emas</h3></td>
                     </tr>
             }
         </tbody>
+        <tfoot className="table__foot">
+            <tr className="table__tr">
+              <th className="table_th" colSpan={7}>Teachers</th>
+            </tr>
+        </tfoot>
       </table>
     </section>
+    {
+      openModal ? <AdminTeacherModal setOpenModal={setOpenModal} firebaseKey={firebaseKey}/> : <></>
+    }
   </main>)
 }
 

@@ -1,0 +1,151 @@
+.tworkers{
+    width: 100%;
+    background: var(--background);
+    box-sizing: border-box;
+}
+
+.workers_title {
+    margin-bottom: 25px;
+    color: var(--text);
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.workers__table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.table__header, .table__foot{
+    background: var(--gradient);
+    width: 100%;
+}
+
+.table__tr {
+    transition: .3s;
+}
+
+.table_th {
+    padding: 18px;
+    text-align: center;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.table__main tr {
+    border-bottom: 1px solid var(--border);
+    transition: .25s;
+}
+
+.table__main tr:hover {
+    background: var(--surface-2);
+}
+
+.table__main td {
+    padding: 16px 18px;
+    color: var(--text);
+    font-size: 14px;
+    text-align: center;
+}
+
+.table__footer {
+    background: var(--surface);
+}
+
+.table__btn.edit {
+    background: #2196f3;
+}
+.table__btn.delete:hover {
+    background: var(--button-hover);
+}
+
+.table__buttons {
+    display: flex;
+    gap: 10px;
+}
+.null_td{
+    background: var(--surface-2);
+    color: var(--text);
+    height: 350px;
+    text-align: center;
+}
+.table_btn{
+    background: var(--button);
+    color: var(--text);
+    border-radius: 10px;
+    height: 35px;
+}
+.edit{
+    width: 50px;
+}
+.delete{
+    width: 70px;
+}
+
+.table_td:nth-child(7){
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    gap: 5px;
+}
+@media (max-width:768px){
+
+    .workers{
+        padding:20px;
+    }
+
+    .workers__table{
+        display:block;
+        overflow-x:auto;
+        white-space:nowrap;
+    }
+
+    .workers_title{
+        font-size:22px;
+    }
+
+    .table_th,
+    .table__main td{
+        padding:14px;
+    }
+
+}
+
+@media (max-width:390px){
+
+    .workers{
+        padding:15px;
+    }
+
+    .workers_title{
+        font-size:20px;
+        margin-bottom:15px;
+    }
+
+    .workers__table{
+        min-width:750px;
+    }
+
+    .table_th{
+        font-size:13px;
+        padding:12px;
+    }
+
+    .table__main td{
+        font-size:13px;
+        padding:12px;
+    }
+
+    .table__btn{
+        padding:6px 10px;
+        font-size:12px;
+    }
+
+}

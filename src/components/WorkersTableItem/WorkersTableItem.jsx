@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
+import React from 'react'
 
-function TeachersTableItem({teacher, index, setOpenModal, setFirebaseKey}) {
+function WorkersTableItem({workrer, index, setOpenModal, setFirebaseKey}) {
 
   async function deleteTeacher(firebaseKey) {
     try {
@@ -10,7 +10,7 @@ function TeachersTableItem({teacher, index, setOpenModal, setFirebaseKey}) {
       const profiles = Object.values(data)
       const deleteProfile = profiles.filter((el) => el.password !== teacher.password)
 
-      const resT = await fetch(`https://sport-project-18919-default-rtdb.firebaseio.com/teachers/${firebaseKey}.json`,{
+      const resT = await fetch(`https://sport-project-18919-default-rtdb.firebaseio.com/workers/${firebaseKey}.json`,{
         method: "DELETE",
         headers: {
           "Content-Type": "application/json"
@@ -30,6 +30,7 @@ function TeachersTableItem({teacher, index, setOpenModal, setFirebaseKey}) {
       window.location.reload()
     }
   }
+
   return (<tr className='table__tr'>
     <td className="table_td">{index + 1}</td>
     <td className="table_td">{teacher.name}</td>
@@ -51,4 +52,4 @@ function TeachersTableItem({teacher, index, setOpenModal, setFirebaseKey}) {
   </tr>)
 }
 
-export default TeachersTableItem
+export default WorkersTableItem

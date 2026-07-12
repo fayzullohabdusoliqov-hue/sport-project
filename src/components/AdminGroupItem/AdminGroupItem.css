@@ -1,0 +1,128 @@
+.group_detail-item{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 18px 22px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  transition: .3s;
+  margin-bottom: 16px;
+}
+
+.group_detail-item:hover{
+  background: var(--surface-2);
+  border-color: var(--primary);
+  box-shadow: var(--shadow);
+}
+
+.group_item-id{
+  min-width: 45px;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: var(--gradient);
+  color: var(--text);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+}
+
+.group__item-content{
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.group_title-name{
+  color: var(--text);
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.group_small-surname{
+  color: var(--text-hover);
+  font-size: 14px;
+}
+
+.group__item-inner{
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+.group__item-inner:nth-child(2) > .group__item-content{
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.group_item-sum{
+  color: var(--primary);
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.group_item-phone{
+  color: var(--text-hover);
+  font-size: 14px;
+}
+
+.group__item-btn{
+  display: flex;
+  gap: 10px;
+}
+
+.group_item-btn{
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  color: var(--text);
+  cursor: pointer;
+  transition: .3s;
+  font-weight: 600;
+}
+
+/* Edit */
+.edit{
+  background: var(--button);
+}
+
+.edit:hover{
+  background: var(--button);
+  transform: translateY(-2px);
+}
+
+/* Delete */
+.delete{
+  background: var(--button);
+}
+
+.delete:hover{
+  background: var(--button-hover);
+  transform: translateY(-2px);
+}
+
+@media (max-width:768px){
+  .group_detail-item{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .group__item-inner{
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .group__item-btn{
+    width: 100%;
+  }
+
+  .group_item-btn{
+    flex: 1;
+  }
+}

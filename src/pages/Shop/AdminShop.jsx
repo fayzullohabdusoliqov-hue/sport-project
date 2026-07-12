@@ -8,8 +8,13 @@ function AdminShop() {
     try{
       const res = await fetch("https://sport-project-18919-default-rtdb.firebaseio.com/products.json")
       const data = await res.json()
-      const array = await Object.entries(data).map(([key, value]) => ({...value, firebaseKey: key}))
-      setProducts(array)
+      
+      if(data){
+        const array = await Object.entries(data).map(([key, value]) => ({...value, firebaseKey: key}))
+        setProducts(array)
+      }else{
+        setProducts(data)
+      }
     }catch(err){
       console.log(err.message)
     }
@@ -23,7 +28,10 @@ function AdminShop() {
       <h1 className="shop_title">EVERY PRODUCTS</h1>
       <div className="shop__wraper">
         {
-          products?.map((el) => <AdminProductsItem product={el}/>)
+          products ? products?.map((el, index) => <AdminProductsItem product={el} index={index} key={index}/>)
+           : <div className='null__group'>
+              <h3 className="null_title">Maxsulotlar mavjud emas</h3>
+            </div>
         }
       </div>
     </section>

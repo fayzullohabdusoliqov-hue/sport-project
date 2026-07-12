@@ -6,6 +6,7 @@ function AdminSidebar() {
   return (<aside className='site__sidebar'>
     <ul className="sidebar__list">
       <li className="sidebar_item"><NavLink to={"/admin/home"}>Home</NavLink></li>
+      <li className="sidebar_item"><NavLink to={"/admin/worker"}>Worker</NavLink></li>
       <li className="sidebar_item"><NavLink to={"/admin/teacher"}>Teacher</NavLink></li>
       <li className="sidebar_item"><NavLink to={"/admin/group"}>Group</NavLink></li>
       <li className="sidebar_item"><NavLink to={"/admin/shop"}>Shop</NavLink></li>

@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import "./AdminGroupModal.css"
 
-function AdminGroupModal({setOpenModal}) {
+function AdminGroupModal({setOpenModal, firebaseKey}) {
   const [group, setGroup] = useState({
     teacherName: "",
     groupName: ""
@@ -24,13 +24,49 @@ function AdminGroupModal({setOpenModal}) {
         window.location.reload()
     }
   }
+  async function patchGroup(){
+    try{
+        const res = await fetch(`https://sport-project-18919-default-rtdb.firebaseio.com/groups/${firebaseKey}.json`,{
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(group)
+        })
+        const data = await res.json()
+        console.log(data)
+    }catch(err){
+        console.log(err.message)
+    }finally{
+        window.location.reload()
+    }
+  }
+  async function getGroup(){
+    if(!firebaseKey) return;
 
-  return (<form className='group__form' onSubmit={(evt) => {
+    try{
+      const res = await fetch(`https://sport-project-18919-default-rtdb.firebaseio.com/groups/${firebaseKey}.json`)
+      const data = await res.json()
+      setGroup(data)
+    }catch(err){
+      console.log(err.message)
+    }
+  }
+  useEffect(() => {
+    getGroup()
+  },[])
+
+  return (<div className='background'><form className='group__form' onSubmit={(evt) => {
     evt.preventDefault()
-    postGroup()
+
+    if(firebaseKey){
+      patchGroup()
+    }else{
+      postGroup()
+    }
   }}>
     <div className="form__content">
-      <h2 className="group_title">Guruh yaratish</h2>
+      <h2 className="group_title">{firebaseKey? "Ma'lumotni o'zgartirish" : 'Guruh yaratish'}</h2>
       <button className="close_btn" onClick={(evt) => {
         evt.preventDefault()
         setOpenModal(false)
@@ -40,16 +76,16 @@ function AdminGroupModal({setOpenModal}) {
         <label htmlFor="groupName" className="group_label">Guruhning ismi:</label>
         <input id='groupName' type="text" className="group_input" onChange={(evt) => {
             setGroup({...group, groupName: evt.target.value})
-        }}/>
+        }} value={group?.groupName}/>
     </div>
     <div className="group__content">
         <label htmlFor="teacherName" className="group_label">O'qtuvchining ismi:</label>
         <input id='teacherName' type="text" className="group_input" onChange={(evt) => {
             setGroup({...group, teacherName: evt.target.value})
-        }}/>
+        }} value={group?.teacherName}/>
     </div>
     <button className="group_btn">Jo'natish</button>
-  </form>)
+  </form></div>)
 }
 
 export default AdminGroupModal
