@@ -62,3 +62,176 @@
     background: var(--button-hover);
     color: var(--text-hover);
 }
+/* =========================
+   Desktop (1200px+)
+========================= */
+@media (min-width:1200px){
+
+    .logout__wraper{
+        padding:40px;
+    }
+
+    .logout_image{
+        height:70vh;
+    }
+
+    .logout__form{
+        width:360px;
+        height:340px;
+        padding:35px;
+    }
+
+    .logout_title{
+        font-size:34px;
+    }
+
+}
+
+/* =========================
+   Laptop
+========================= */
+@media (max-width:1024px){
+
+    .logout__wraper{
+        padding:30px;
+        gap:30px;
+    }
+
+    .logout_image{
+        height:55vh;
+    }
+
+    .logout__form{
+        width:330px;
+        height:320px;
+    }
+
+}
+
+/* =========================
+   Tablet (iPad)
+========================= */
+@media (max-width:768px){
+
+    .logout__wraper{
+        flex-direction:column;
+        justify-content:center;
+        gap:30px;
+        padding:20px;
+        height:auto;
+        min-height:100vh;
+    }
+
+    .logout_image{
+        width:70%;
+        height:auto;
+        max-height:300px;
+    }
+
+    .logout__form{
+        width:90%;
+        max-width:350px;
+        height:auto;
+        padding:25px;
+    }
+
+    .logout_title{
+        font-size:28px;
+    }
+
+}
+
+/* =========================
+   Telefonlar
+   iPhone 13 / 15
+   Samsung / Redmi
+========================= */
+@media (max-width:430px){
+
+    .logout__wraper{
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+        gap:20px;
+        padding:20px 15px;
+        height:auto;
+        min-height:100vh;
+    }
+
+    .logout_image{
+        width:80%;
+        height:auto;
+        max-height:220px;
+    }
+
+    .logout__form{
+        width:100%;
+        max-width:340px;
+        height:auto;
+        padding:20px;
+    }
+
+    .logout_title{
+        font-size:24px;
+    }
+
+    .logout__content{
+        margin-top:20px;
+    }
+
+    .logout_input,
+    .logout_btn{
+        height:42px;
+    }
+
+}
+
+/* =========================
+   iPhone 13 mini
+========================= */
+@media (max-width:375px){
+
+    .logout_image{
+        max-height:180px;
+    }
+
+    .logout__form{
+        padding:18px;
+    }
+
+    .logout_title{
+        font-size:22px;
+    }
+
+    .logout_input,
+    .logout_btn{
+        height:40px;
+        font-size:14px;
+    }
+
+}
+
+/* =========================
+   Juda kichik ekranlar
+========================= */
+@media (max-width:320px){
+
+    .logout_image{
+        max-height:150px;
+    }
+
+    .logout__form{
+        padding:15px;
+    }
+
+    .logout_title{
+        font-size:20px;
+    }
+
+    .logout_input,
+    .logout_btn{
+        height:38px;
+        font-size:13px;
+    }
+
+}

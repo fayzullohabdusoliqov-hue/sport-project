@@ -35,3 +35,120 @@
     transform: rotate(360deg);
   }
 }
+/* ===========================
+   Desktop (1200px+)
+=========================== */
+@media (min-width: 1200px) {
+  .loading__content {
+    width: 70px;
+    height: 70px;
+    border-width: 6px;
+  }
+
+  .loading_title {
+    font-size: 22px;
+    letter-spacing: 3px;
+  }
+}
+
+/* ===========================
+   Laptop (992px - 1199px)
+=========================== */
+@media (max-width: 1199px) {
+  .loading__content {
+    width: 65px;
+    height: 65px;
+  }
+
+  .loading_title {
+    font-size: 20px;
+  }
+}
+
+/* ===========================
+   Tablet (768px - 991px)
+=========================== */
+@media (max-width: 991px) {
+  .loading {
+    gap: 18px;
+    padding: 20px;
+  }
+
+  .loading__content {
+    width: 60px;
+    height: 60px;
+    border-width: 5px;
+  }
+
+  .loading_title {
+    font-size: 18px;
+    letter-spacing: 2px;
+    text-align: center;
+  }
+}
+
+/* ===========================
+   iPhone 13 / 15
+   Samsung
+   Redmi
+   (576px - 767px)
+=========================== */
+@media (max-width: 767px) {
+  .loading {
+    gap: 16px;
+    padding: 20px;
+  }
+
+  .loading__content {
+    width: 55px;
+    height: 55px;
+    border-width: 5px;
+  }
+
+  .loading_title {
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-align: center;
+  }
+}
+
+/* ===========================
+   iPhone 13 Mini
+   iPhone SE
+   (480px va kichik)
+=========================== */
+@media (max-width: 480px) {
+  .loading {
+    gap: 14px;
+    padding: 15px;
+  }
+
+  .loading__content {
+    width: 48px;
+    height: 48px;
+    border-width: 4px;
+  }
+
+  .loading_title {
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-align: center;
+  }
+}
+
+/* ===========================
+   Juda kichik ekranlar
+   (360px va kichik)
+=========================== */
+@media (max-width: 360px) {
+  .loading__content {
+    width: 42px;
+    height: 42px;
+    border-width: 4px;
+  }
+
+  .loading_title {
+    font-size: 13px;
+    letter-spacing: 1px;
+  }
+}

@@ -7,6 +7,7 @@ function AdminGroupModal({setOpenModal, firebaseKey}) {
     teacherName: "",
     groupName: ""
   })
+  const [teachers, setTeachers] = useState([])
 
   async function postGroup(){
     try{
@@ -52,8 +53,20 @@ function AdminGroupModal({setOpenModal, firebaseKey}) {
       console.log(err.message)
     }
   }
+  async function getTeachers(){
+    try{
+      const res = await fetch(`https://sport-project-18919-default-rtdb.firebaseio.com/teachers.json`)
+      const data = await res.json()
+      const array = await Object.values(data)
+      setTeachers(array)
+    }catch(err){
+      console.log(err.message)
+    }
+  }
+
   useEffect(() => {
     getGroup()
+    getTeachers()
   },[])
 
   return (<div className='background'><form className='group__form' onSubmit={(evt) => {
@@ -80,9 +93,16 @@ function AdminGroupModal({setOpenModal, firebaseKey}) {
     </div>
     <div className="group__content">
         <label htmlFor="teacherName" className="group_label">O'qtuvchining ismi:</label>
-        <input id='teacherName' type="text" className="group_input" onChange={(evt) => {
+        <select className='group_select' id="teacherName" onChange={(evt) => {
             setGroup({...group, teacherName: evt.target.value})
-        }} value={group?.teacherName}/>
+        }}>
+          <option value="null">o'qtuvchi tanlang</option>
+          {
+            teachers? 
+             teachers?.map((el, index) => <option key={index} className='group_option' value={el.name}>{el.name}</option>) :
+              <option className='group_option' value={"don't have teacher"}>o'qtuvchi mavjud emas</option>
+          }
+        </select>
     </div>
     <button className="group_btn">Jo'natish</button>
   </form></div>)

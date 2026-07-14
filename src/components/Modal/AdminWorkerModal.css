@@ -82,3 +82,161 @@
     transform: translateY(-2px);
     box-shadow: var(--shadow);
 }
+/* =========================
+   Desktop (1200px+)
+========================= */
+@media (min-width: 1200px){
+    .worker__form{
+        max-width: 500px;
+        padding: 35px;
+    }
+
+    .worker_title{
+        font-size: 32px;
+    }
+
+    .worker_input,
+    .worker_select{
+        font-size: 16px;
+    }
+
+    .worker_btn{
+        font-size: 18px;
+    }
+}
+
+/* =========================
+   Laptop
+========================= */
+@media (max-width: 1024px){
+    .worker__form{
+        max-width: 420px;
+        padding: 25px;
+    }
+
+    .worker_title{
+        font-size: 28px;
+    }
+}
+
+/* =========================
+   Tablet (iPad)
+========================= */
+@media (max-width: 768px){
+    .worker__form{
+        width: 90%;
+        max-width: 400px;
+        padding: 22px;
+    }
+
+    .worker_title{
+        font-size: 25px;
+    }
+
+    .worker_label{
+        font-size: 15px;
+    }
+
+    .worker_input,
+    .worker_select{
+        padding: 11px 14px;
+        font-size: 15px;
+    }
+
+    .worker_btn{
+        padding: 13px;
+        font-size: 16px;
+    }
+}
+
+/* =========================
+   iPhone 13 / 14 / 15
+   Samsung / Redmi
+========================= */
+@media (max-width: 430px){
+    .worker__form{
+        width: 92%;
+        padding: 20px;
+    }
+
+    .worker__form > .form__content{
+        margin-bottom: 20px;
+    }
+
+    .worker_title{
+        font-size: 22px;
+    }
+
+    .worker_label{
+        font-size: 14px;
+    }
+
+    .worker_input,
+    .worker_select{
+        padding: 10px 12px;
+        font-size: 14px;
+    }
+
+    .worker_btn{
+        padding: 12px;
+        font-size: 15px;
+    }
+}
+
+/* =========================
+   iPhone 13 mini
+========================= */
+@media (max-width: 375px){
+    .worker__form{
+        width: 94%;
+        padding: 18px;
+    }
+
+    .worker_title{
+        font-size: 20px;
+    }
+
+    .worker_label{
+        font-size: 13px;
+    }
+
+    .worker_input,
+    .worker_select{
+        padding: 9px 11px;
+        font-size: 13px;
+    }
+
+    .worker_btn{
+        padding: 11px;
+        font-size: 14px;
+    }
+}
+
+/* =========================
+   Juda kichik ekranlar
+========================= */
+@media (max-width: 320px){
+    .worker__form{
+        width: 96%;
+        padding: 15px;
+    }
+
+    .worker_title{
+        font-size: 18px;
+    }
+
+    .worker_label{
+        font-size: 12px;
+    }
+
+    .worker_input,
+    .worker_select{
+        padding: 8px 10px;
+        font-size: 12px;
+    }
+
+    .worker_btn{
+        padding: 10px;
+        font-size: 13px;
+    }
+}

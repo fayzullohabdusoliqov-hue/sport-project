@@ -30,3 +30,144 @@
     color: var(--text-hover);
     font-size: 15px;
 }
+/* ========================= */
+/* Desktop (1200px) */
+/* ========================= */
+@media screen and (max-width:1200px){
+
+    .group_card{
+        height:115px;
+        padding:20px;
+    }
+
+    .group_subtitle{
+        font-size:21px;
+    }
+
+    .group_small{
+        font-size:14px;
+    }
+
+}
+
+/* ========================= */
+/* Laptop (992px) */
+/* ========================= */
+@media screen and (max-width:992px){
+
+    .group_card{
+        height:110px;
+        padding:18px;
+    }
+
+    .group_subtitle{
+        font-size:20px;
+    }
+
+    .group_small{
+        font-size:14px;
+    }
+
+}
+
+/* ========================= */
+/* Tablet (768px) */
+/* ========================= */
+@media screen and (max-width:768px){
+
+    .group_card{
+        height:105px;
+        padding:16px;
+    }
+
+    .group_subtitle{
+        font-size:19px;
+    }
+
+    .group_small{
+        font-size:13px;
+    }
+
+}
+
+/* ========================= */
+/* iPhone 15 / Samsung / Redmi (430px) */
+/* ========================= */
+@media screen and (max-width:430px){
+
+    .group_card{
+        height:100px;
+        padding:15px;
+        border-radius:12px;
+    }
+
+    .group_subtitle{
+        font-size:18px;
+        margin-bottom:6px;
+    }
+
+    .group_small{
+        font-size:13px;
+    }
+
+}
+
+/* ========================= */
+/* iPhone 13 / 14 / 15 (390px) */
+/* ========================= */
+@media screen and (max-width:390px){
+
+    .group_card{
+        height:95px;
+        padding:14px;
+    }
+
+    .group_subtitle{
+        font-size:17px;
+    }
+
+    .group_small{
+        font-size:12px;
+    }
+
+}
+
+/* ========================= */
+/* iPhone 13 Mini / iPhone SE (375px) */
+/* ========================= */
+@media screen and (max-width:375px){
+
+    .group_card{
+        height:90px;
+        padding:12px;
+    }
+
+    .group_subtitle{
+        font-size:16px;
+    }
+
+    .group_small{
+        font-size:11px;
+    }
+
+}
+
+/* ========================= */
+/* Juda kichik telefonlar (320px) */
+/* ========================= */
+@media screen and (max-width:320px){
+
+    .group_card{
+        height:85px;
+        padding:10px;
+    }
+
+    .group_subtitle{
+        font-size:15px;
+    }
+
+    .group_small{
+        font-size:10px;
+    }
+
+}

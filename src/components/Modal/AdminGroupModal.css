@@ -33,7 +33,7 @@
     font-size: 16px;
     font-weight: 600;
 }
-.group_input{
+.group_input, .group_select{
     width: 100%;
     padding: 12px 15px;
     background: var(--surface-2);
@@ -48,6 +48,7 @@
     width: 100%;
     margin-top: 15px;
     padding: 14px;
+    height: 45px;
     border: none;
     border-radius: var(--radius);
     background: var(--gradient);
@@ -61,4 +62,188 @@
     background: var(--button-hover);
     transform: translateY(-2px);
     box-shadow: var(--shadow);
+}
+/* ===========================
+   Desktop (1200px+)
+=========================== */
+@media (min-width: 1200px) {
+  .group__form {
+    max-width: 450px;
+    padding: 30px;
+  }
+
+  .group_title {
+    font-size: 30px;
+  }
+
+  .group_input,
+  .group_select {
+    padding: 12px 15px;
+    font-size: 15px;
+  }
+
+  .group_btn {
+    height: 45px;
+    font-size: 17px;
+  }
+}
+
+/* ===========================
+   Laptop (992px - 1199px)
+=========================== */
+@media (max-width: 1199px) {
+  .group__form {
+    max-width: 420px;
+    padding: 25px;
+  }
+
+  .group_title {
+    font-size: 28px;
+  }
+
+  .group_btn {
+    font-size: 16px;
+  }
+}
+
+/* ===========================
+   Tablet (768px - 991px)
+=========================== */
+@media (max-width: 991px) {
+  .group__form {
+    max-width: 380px;
+    padding: 22px;
+  }
+
+  .group__form > .form__content {
+    margin-bottom: 20px;
+  }
+
+  .group_title {
+    font-size: 25px;
+  }
+
+  .group_label {
+    font-size: 15px;
+  }
+
+  .group_input,
+  .group_select {
+    padding: 11px 14px;
+    font-size: 14px;
+  }
+
+  .group_btn {
+    height: 42px;
+    font-size: 15px;
+  }
+}
+
+/* ===========================
+   iPhone 13 / iPhone 15
+   Samsung
+   Redmi
+   (576px - 767px)
+=========================== */
+@media (max-width: 767px) {
+  .group__form {
+    width: calc(100% - 30px);
+    max-width: 100%;
+    padding: 20px;
+  }
+
+  .group__form > .form__content {
+    margin-bottom: 18px;
+  }
+
+  .group_title {
+    font-size: 22px;
+  }
+
+  .group_label {
+    font-size: 14px;
+  }
+
+  .group_input,
+  .group_select {
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+
+  .group_btn {
+    height: 42px;
+    font-size: 15px;
+    margin-top: 12px;
+  }
+}
+
+/* ===========================
+   iPhone 13 Mini
+   iPhone SE
+   (480px va kichik)
+=========================== */
+@media (max-width: 480px) {
+  .group__form {
+    width: calc(100% - 20px);
+    padding: 18px;
+    border-radius: 12px;
+  }
+
+  .group__form > .form__content {
+    margin-bottom: 15px;
+  }
+
+  .group_title {
+    font-size: 20px;
+  }
+
+  .group__content {
+    gap: 6px;
+    margin-bottom: 16px;
+  }
+
+  .group_label {
+    font-size: 13px;
+  }
+
+  .group_input,
+  .group_select {
+    padding: 10px;
+    font-size: 13px;
+  }
+
+  .group_btn {
+    height: 40px;
+    font-size: 14px;
+  }
+}
+
+/* ===========================
+   Juda kichik ekranlar
+   (360px va kichik)
+=========================== */
+@media (max-width: 360px) {
+  .group__form {
+    width: calc(100% - 16px);
+    padding: 15px;
+  }
+
+  .group_title {
+    font-size: 18px;
+  }
+
+  .group_label {
+    font-size: 12px;
+  }
+
+  .group_input,
+  .group_select {
+    padding: 9px;
+    font-size: 12px;
+  }
+
+  .group_btn {
+    height: 38px;
+    font-size: 13px;
+  }
 }

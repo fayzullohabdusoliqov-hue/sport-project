@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import "./AdminHome.css"
 import CardAdminHome from '../../components/CardAdminHome/CardAdminHome'
+import ResultCardAdminHome from '../../components/ResultCardAdminHome/ResultCardAdminHome'
 
 function AdminHome() {
   const [teachers, setTeachers] = useState(0)
@@ -9,6 +10,12 @@ function AdminHome() {
   const [roules, setRoules] = useState(0)
   const [products, setProducts] = useState(0)
   const [groups, setGroups] = useState(0)
+  const [monthlyTeachers, setMonthlyTeachers] = useState([])
+  const [monthlyWorkers, setMonthlyWorkers] = useState([])
+  const [monthlyStudents, setMonthlyStudents] = useState([])
+  const [monthlyProducts, setMonthlyProducts] = useState([])
+  const [monthlyRent, setMonthlyRent] = useState(0)
+  const [profit, setProfit] = useState(0)
 
   async function getTeachers(){
     try{
@@ -33,10 +40,22 @@ function AdminHome() {
       if(data){
         const array = await Object.values(data)
         const students = array.map((el) => el.students ? el.students.length : 0)
+        const filterStudent = array.map((el) => el.students)
+        
+        let everyStudent = []
+        for(let i = 0; i < filterStudent; i++){
+          everyStudent = [...everyStudent, ...filterStudent[i]]
+          console.log(everyStudent)
+        }
 
         let everyStudents = 0
+        let monthlyStudent = 0
         for(let i = 0; i < students.length; i++){
           everyStudents += students[i]
+        }
+        for(let i = 0; i < studentsSum.length; i++){
+          monthlyStudent += Number(studentsSum[i])
+          console.log(monthlyStudent)
         }
         setStudents(everyStudents)
       }else{
@@ -119,12 +138,22 @@ function AdminHome() {
     <section className="dashboard">
       <h1 className="dashboard_title">DASHBOARD</h1>
       <div className="dashboard__content">
-        <CardAdminHome title={"Teachers"} info={teachers}/>
-        <CardAdminHome title={"Students"} info={students}/>
-        <CardAdminHome title={"Workers"} info={workers}/>
-        <CardAdminHome title={"Roules"} info={roules}/>
-        <CardAdminHome title={"Products"} info={products}/>
-        <CardAdminHome title={"Groups"} info={groups}/>
+        <CardAdminHome title={"Teachers"} info={teachers} content="ta"/>
+        <CardAdminHome title={"Students"} info={students} content="ta"/>
+        <CardAdminHome title={"Workers"} info={workers} content="ta"/>
+        <CardAdminHome title={"Roules"} info={roules} content="ta"/>
+        <CardAdminHome title={"Products"} info={products} content="ta"/>
+        <CardAdminHome title={"Groups"} info={groups} content="ta"/>
+        <CardAdminHome title={"Rent"} info={groups} content=" so'm"/>
+      </div>
+    </section>
+    <section className="results">
+      <h2 className="results_title">RESULTS</h2>
+      <div className="results__wraper">
+        <ResultCardAdminHome title={"Ishchilarning oyligi"} info={0}/>
+        <ResultCardAdminHome title={"O'qtuvchilarning oyligi"} info={0}/>
+        <ResultCardAdminHome title={"Maxsulotlardan kelgan oylik"} info={0}/>
+        <ResultCardAdminHome title={"O'quvchilardan keladigan pul"} info={0}/>
       </div>
     </section>
   </main>)

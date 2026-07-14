@@ -6,7 +6,12 @@ function AdminStudentModal({setOpenModal, editObject}) {
   const {firebaseKey} = useParams()
   const [group, setGroup] = useState({})
   const [students, setStudents] = useState([])
-  const [student, setStudent] = useState({})
+  const [student, setStudent] = useState({
+    name: "",
+    surName: "",
+    monthlySum: 0,
+    phone: 0
+  })
   const [info, setInfo] = useState({})
 
   async function getGroup(){
@@ -98,25 +103,25 @@ function AdminStudentModal({setOpenModal, editObject}) {
             <label htmlFor="name" className="student_label">ism:</label>
             <input id='name' type="text" className="student_input" onChange={(evt) => {
                 setStudent({...student, name: evt.target.value})
-            }} defaultValue={editObject.name}/>
+            }} defaultValue={editObject? editObject.name : student.name}/>
         </div>
         <div className="student__content">
             <label htmlFor="surname" className="student_label">familiya:</label>
             <input id='surname' type="text" className="student_input" onChange={(evt) => {
                 setStudent({...student, surName: evt.target.value})
-            }} defaultValue={editObject.surName}/>
+            }} defaultValue={editObject? editObject.surName : student.surName}/>
         </div>
         <div className="student__content">
             <label htmlFor="phone" className="student_label">telefon:</label>
             <input id='phone' type="number" className="student_input" onChange={(evt) => {
                 setStudent({...student, phone: evt.target.value})
-            }} defaultValue={Number(editObject.phone)}/>
+            }} defaultValue={editObject? Number(editObject.phone) : student.phone}/>
         </div>
         <div className="student__content">
             <label htmlFor="monthlySum" className="student_label">oylik to'lo'v:</label>
             <input id='monthlySum' type="number" className="student_input" onChange={(evt) => {
                 setStudent({...student, monthlySum: evt.target.value})
-            }} defaultValue={Number(editObject.monthlySum)}/>
+            }} defaultValue={editObject? Number(editObject.monthlySum) : student.monthlySum}/>
         </div>
         <div className="student__content">
             <strong className="group_name">{group?.groupName}</strong>

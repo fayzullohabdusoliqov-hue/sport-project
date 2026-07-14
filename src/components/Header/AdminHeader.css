@@ -142,13 +142,198 @@
 .search_btn:active {
     transform: scale(.98);
 }
+/* ===========================
+   Desktop (1200px+)
+=========================== */
+@media (min-width: 1200px) {
+  .site__header {
+    padding: 15px 25px;
+  }
 
-@media (max-width: 600px) {
-    .search__form {
-        flex-direction: column;
-    }
+  .header_img {
+    width: 70px;
+    height: 70px;
+  }
 
-    .search_btn {
-        width: 100%;
-    }
+  .header_image {
+    width: 85px;
+  }
+
+  .header_btn {
+    padding: 14px 30px;
+    font-size: 16px;
+  }
+
+  .search__form {
+    max-width: 650px;
+  }
+}
+
+/* ===========================
+   Laptop (992px - 1199px)
+=========================== */
+@media (max-width: 1199px) {
+  .header_btn {
+    padding: 12px 22px;
+    font-size: 15px;
+  }
+
+  .search__form {
+    max-width: 550px;
+  }
+}
+
+/* ===========================
+   Tablet (768px - 991px)
+=========================== */
+@media (max-width: 991px) {
+  .site__header {
+    padding: 12px 15px;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+
+  .header_img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .header_image {
+    width: 70px;
+  }
+
+  .header__profile {
+    padding: 10px 15px;
+  }
+
+  .header_subtitle {
+    font-size: 15px;
+  }
+
+  .header_small {
+    font-size: 12px;
+  }
+
+  .header_btn {
+    padding: 10px 18px;
+    font-size: 14px;
+  }
+
+  .search__form {
+    width: 100%;
+    margin-top: 20px;
+  }
+}
+
+/* ===========================
+   iPhone 13 / 14 / 15
+   Samsung
+   Redmi
+   (576px - 767px)
+=========================== */
+@media (max-width: 767px) {
+
+  .site__header {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+  }
+
+  .header__content {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .header__btn {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .header_img {
+    width: 55px;
+    height: 55px;
+  }
+
+  .header_image {
+    width: 65px;
+  }
+
+  .header__profile {
+    padding: 10px 14px;
+  }
+
+  .header_subtitle {
+    font-size: 15px;
+  }
+
+  .header_small {
+    font-size: 11px;
+  }
+
+  .header_btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 15px;
+  }
+
+  .search__form {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .search_input,
+  .search_btn {
+    width: 100%;
+  }
+}
+
+/* ===========================
+   iPhone 13 Mini
+   iPhone SE
+   (480px va kichik)
+=========================== */
+@media (max-width: 480px) {
+
+  .site__header {
+    padding: 10px;
+  }
+
+  .header_img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .header_image {
+    width: 58px;
+  }
+
+  .header__profile {
+    padding: 8px 10px;
+  }
+
+  .header_subtitle {
+    font-size: 14px;
+  }
+
+  .header_small {
+    font-size: 10px;
+  }
+
+  .header_btn {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .search_input {
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  .search_btn {
+    padding: 12px;
+    font-size: 14px;
+  }
 }

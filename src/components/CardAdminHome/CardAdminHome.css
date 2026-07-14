@@ -35,3 +35,139 @@
   color: var(--primary);
   line-height: 1.2;
 }
+/* ========================= */
+/* Desktop (1200px) */
+/* ========================= */
+@media screen and (max-width:1200px){
+
+    .admin__card{
+        padding:22px;
+        gap:10px;
+    }
+
+    .card_title{
+        font-size:17px;
+    }
+
+    .card_text{
+        font-size:30px;
+    }
+
+}
+
+/* ========================= */
+/* Laptop (992px) */
+/* ========================= */
+@media screen and (max-width:992px){
+
+    .admin__card{
+        padding:20px;
+    }
+
+    .card_title{
+        font-size:16px;
+    }
+
+    .card_text{
+        font-size:28px;
+    }
+
+}
+
+/* ========================= */
+/* Tablet (768px) */
+/* ========================= */
+@media screen and (max-width:768px){
+
+    .admin__card{
+        padding:18px;
+    }
+
+    .card_title{
+        font-size:16px;
+    }
+
+    .card_text{
+        font-size:26px;
+    }
+
+}
+
+/* ========================= */
+/* iPhone 15 / Samsung / Redmi (430px) */
+/* ========================= */
+@media screen and (max-width:430px){
+
+    .admin__card{
+        padding:16px;
+        gap:8px;
+        border-radius:12px;
+    }
+
+    .card_title{
+        font-size:15px;
+    }
+
+    .card_text{
+        font-size:24px;
+    }
+
+}
+
+/* ========================= */
+/* iPhone 13 / 14 / 15 (390px) */
+/* ========================= */
+@media screen and (max-width:390px){
+
+    .admin__card{
+        padding:14px;
+    }
+
+    .card_title{
+        font-size:14px;
+    }
+
+    .card_text{
+        font-size:22px;
+    }
+
+}
+
+/* ========================= */
+/* iPhone 13 Mini / iPhone SE (375px) */
+/* ========================= */
+@media screen and (max-width:375px){
+
+    .admin__card{
+        padding:12px;
+        gap:6px;
+    }
+
+    .card_title{
+        font-size:13px;
+    }
+
+    .card_text{
+        font-size:20px;
+    }
+
+}
+
+/* ========================= */
+/* Juda kichik ekranlar (320px) */
+/* ========================= */
+@media screen and (max-width:320px){
+
+    .admin__card{
+        padding:10px;
+    }
+
+    .card_title{
+        font-size:12px;
+    }
+
+    .card_text{
+        font-size:18px;
+    }
+
+}

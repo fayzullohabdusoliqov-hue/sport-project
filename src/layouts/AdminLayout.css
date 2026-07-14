@@ -26,3 +26,140 @@
     margin-bottom: 50px;
     overflow: scroll;
 }
+/* =========================
+   Desktop (1200px+)
+========================= */
+@media (min-width:1200px){
+
+    .admin__layout{
+        grid-template-columns:350px 1fr;
+        grid-template-rows:100px 1fr;
+    }
+
+    .admin__main{
+        padding:30px;
+    }
+
+}
+
+/* =========================
+   Laptop
+========================= */
+@media (max-width:1024px){
+
+    .admin__layout{
+        grid-template-columns:280px 1fr;
+        grid-template-rows:90px 1fr;
+    }
+
+    .admin__main{
+        padding:25px;
+    }
+
+}
+
+/* =========================
+   Tablet (iPad)
+========================= */
+@media (max-width:768px){
+
+    .admin__layout{
+        grid-template-columns:240px 1fr;
+        grid-template-rows:80px 1fr;
+    }
+
+    .admin__main{
+        padding:20px;
+    }
+
+}
+
+/* =========================
+   Telefonlar
+   iPhone 13
+   iPhone 15
+   Samsung
+   Redmi
+========================= */
+@media (max-width:430px){
+
+    .admin__layout{
+        display:flex;
+        flex-direction:column;
+        height:100vh;
+        overflow:hidden;
+    }
+
+    .site__header{
+        width:100%;
+        height:70px;
+    }
+
+    .site__main{
+        width:100%;
+        height:calc(100vh - 70px);
+        overflow-y:auto;
+    }
+
+    .admin__main{
+        padding:15px;
+        margin-bottom:90px;
+    }
+
+    /* Sidebar oldingi koddagidek pastdan chiqadi */
+    .site__sidebar{
+        position:fixed;
+        left:0;
+        right:0;
+        bottom:-100%;
+        top:auto;
+        width:100%;
+        height:70%;
+        transition:.4s;
+        z-index:999;
+    }
+
+    .site__sidebar.active{
+        bottom:0;
+    }
+
+}
+
+/* =========================
+   iPhone 13 mini
+========================= */
+@media (max-width:375px){
+
+    .site__header{
+        height:65px;
+    }
+
+    .site__main{
+        height:calc(100vh - 65px);
+    }
+
+    .admin__main{
+        padding:12px;
+        margin-bottom:80px;
+    }
+
+}
+
+/* =========================
+   Juda kichik ekranlar
+========================= */
+@media (max-width:320px){
+
+    .site__header{
+        height:60px;
+    }
+
+    .site__main{
+        height:calc(100vh - 60px);
+    }
+
+    .admin__main{
+        padding:10px;
+    }
+
+}

@@ -4,3 +4,17 @@
     grid-template-rows: repeat(2, 150px);
     gap: 15px;
 }
+
+.results{
+    padding-top: 40px;
+}
+.results_title{
+    font-size: 32px;
+    padding-bottom: 30px;
+}
+.results__wraper{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 300px);
+    gap: 30px;
+}

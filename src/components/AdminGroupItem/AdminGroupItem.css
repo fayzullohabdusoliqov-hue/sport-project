@@ -126,3 +126,199 @@
     flex: 1;
   }
 }
+/* ========================= */
+/* Laptop */
+/* ========================= */
+@media (max-width:1200px){
+    .group_detail-item{
+        padding:16px 18px;
+    }
+
+    .group_title-name{
+        font-size:18px;
+    }
+
+    .group_item-sum{
+        font-size:17px;
+    }
+
+    .group__item-inner{
+        gap:20px;
+    }
+}
+
+/* ========================= */
+/* Tablet */
+/* ========================= */
+@media (max-width:992px){
+
+    .group_detail-item{
+        padding:15px;
+    }
+
+    .group__item-inner{
+        gap:15px;
+    }
+
+    .group_title-name{
+        font-size:17px;
+    }
+
+    .group_item-id{
+        width:40px;
+        height:40px;
+        min-width:40px;
+        font-size:16px;
+    }
+
+    .group_item-btn{
+        padding:10px 14px;
+    }
+
+}
+
+/* ========================= */
+/* iPad Mini / Large Phones */
+/* ========================= */
+@media (max-width:768px){
+
+    .group_detail-item{
+        flex-direction:column;
+        align-items:flex-start;
+        padding:16px;
+    }
+
+    .group__item-inner{
+        width:100%;
+        justify-content:space-between;
+        flex-wrap:wrap;
+        gap:15px;
+    }
+
+    .group__item-btn{
+        width:100%;
+        display:flex;
+    }
+
+    .group_item-btn{
+        flex:1;
+    }
+
+}
+
+/* ========================= */
+/* iPhone 15, Samsung, Redmi */
+/* ========================= */
+@media (max-width:430px){
+
+    .group_detail-item{
+        padding:14px;
+        gap:15px;
+    }
+
+    .group__item-inner{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:12px;
+    }
+
+    .group__item-inner:nth-child(2)>.group__item-content{
+        align-items:flex-start;
+    }
+
+    .group_item-id{
+        width:38px;
+        height:38px;
+        min-width:38px;
+        font-size:15px;
+    }
+
+    .group_title-name{
+        font-size:16px;
+    }
+
+    .group_small-surname{
+        font-size:13px;
+    }
+
+    .group_item-sum{
+        font-size:16px;
+    }
+
+    .group_item-phone{
+        font-size:13px;
+    }
+
+    .group__item-btn{
+        width:100%;
+        display:flex;
+        gap:8px;
+    }
+
+    .group_item-btn{
+        width:100%;
+        padding:12px;
+        font-size:14px;
+    }
+
+}
+
+/* ========================= */
+/* iPhone 13 Mini / SE */
+/* ========================= */
+@media (max-width:390px){
+
+    .group_detail-item{
+        padding:12px;
+    }
+
+    .group_item-id{
+        width:34px;
+        height:34px;
+        min-width:34px;
+        font-size:14px;
+    }
+
+    .group_title-name{
+        font-size:15px;
+    }
+
+    .group_small-surname,
+    .group_item-phone{
+        font-size:12px;
+    }
+
+    .group_item-sum{
+        font-size:15px;
+    }
+
+    .group_item-btn{
+        padding:10px;
+        font-size:13px;
+    }
+
+}
+
+/* ========================= */
+/* Juda kichik ekranlar */
+/* ========================= */
+@media (max-width:320px){
+
+    .group_detail-item{
+        padding:10px;
+    }
+
+    .group_title-name{
+        font-size:14px;
+    }
+
+    .group_item-sum{
+        font-size:14px;
+    }
+
+    .group_item-btn{
+        font-size:12px;
+        padding:9px;
+    }
+
+}
