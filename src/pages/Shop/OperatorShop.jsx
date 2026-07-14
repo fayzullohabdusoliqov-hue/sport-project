@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import AdminProductsItem from '../../components/AdminProductItem/AdminProductsItem'
 import AdminProductModal from '../../components/Modal/AdminProductModal'
+import OperatorProductItem from '../../components/OperatorProductItem/OperatorProductItem'
 import "./AdminShop.css"
 
-function AdminShop() {
+function OperatorShop() {
   const [products, setProducts] = useState([])
-  const [openModal, setOpenModal] = useState(false)
   const [firebaseKey, setFirebaseKey] = useState("")
 
   async function getProducts(){
@@ -32,17 +32,14 @@ function AdminShop() {
       <h1 className="shop_title">EVERY PRODUCTS</h1>
       <div className="shop__wraper">
         {
-          products ? products?.map((el, index) => <AdminProductsItem key={index} product={el} setFirebaseKey={setFirebaseKey} setOpenModal={setOpenModal}/>)
+          products ? products?.map((el, index) => <OperatorProductItem key={index} product={el} setFirebaseKey={setFirebaseKey}/>)
            : <div className='null__group'>
               <h3 className="null_title">Maxsulotlar mavjud emas</h3>
             </div>
         }
       </div>
     </section>
-    {
-      openModal && <AdminProductModal setOpenModal={setOpenModal} firebaseKey={firebaseKey}/>
-    }
   </main>)
 }
 
-export default AdminShop
+export default OperatorShop

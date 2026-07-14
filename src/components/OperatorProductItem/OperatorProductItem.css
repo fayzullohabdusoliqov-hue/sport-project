@@ -1,0 +1,270 @@
+.products__item {
+  width: 300px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px var(--shadow);
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.products__item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 35px var(--shadow);
+}
+
+.products_img {
+  background: #000;
+  width: 100%;
+  height: 220px;
+  object-fit: contain;
+  display: block;
+}
+
+.products_title {
+  padding: 16px 16px 8px;
+  color: var(--text);
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.products__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px 18px;
+}
+
+.product_price {
+  color: var(--primary);
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.products_small {
+  background: var(--surface-2);
+  color: var(--text);
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.products_btn {
+  height: 45px;
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  color: var(--text);
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.products_btn:hover {
+  transform: scale(0.97);
+}
+.edit:hover {
+  background: var(--button-hover);
+}
+
+.delete {
+  background: var(--button);
+}
+
+.delete:hover {
+  background: var(--button-hover);
+}
+/* ========================= */
+/* Desktop (1920px - 1201px) */
+/* ========================= */
+@media screen and (max-width: 1200px) {
+  .products__item {
+    width: 280px;
+  }
+
+  .products_img {
+    height: 210px;
+  }
+
+  .products_title,
+  .product_price {
+    font-size: 20px;
+  }
+}
+
+/* ========================= */
+/* Laptop (1200px - 992px) */
+/* ========================= */
+@media screen and (max-width: 992px) {
+  .products__item {
+    width: 260px;
+  }
+
+  .products_img {
+    height: 190px;
+  }
+
+  .products_title {
+    font-size: 19px;
+  }
+
+  .product_price {
+    font-size: 19px;
+  }
+
+  .products_btn {
+    height: 42px;
+    font-size: 14px;
+  }
+}
+
+/* ========================= */
+/* Tablet (991px - 769px) */
+/* ========================= */
+@media screen and (max-width: 768px) {
+  .products__item {
+    width: 100%;
+    max-width: 340px;
+    margin: auto;
+  }
+
+  .products_img {
+    height: 200px;
+  }
+
+  .products_title {
+    font-size: 18px;
+  }
+
+  .product_price {
+    font-size: 18px;
+  }
+}
+
+/* ========================= */
+/* iPhone 15 Plus / Android */
+/* ========================= */
+@media screen and (max-width: 430px) {
+  .products__item {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .products_img {
+    height: 190px;
+  }
+
+  .products_title {
+    font-size: 18px;
+    padding: 14px;
+  }
+
+  .products__content {
+    padding: 0 14px 14px;
+  }
+
+  .product_price {
+    font-size: 18px;
+  }
+
+  .products_small {
+    font-size: 13px;
+    padding: 5px 10px;
+  }
+
+  .products__btn {
+    padding: 14px;
+    gap: 8px;
+  }
+
+  .products_btn {
+    height: 40px;
+    font-size: 14px;
+  }
+}
+
+/* ========================= */
+/* iPhone 13 / 14 / 15 */
+/* ========================= */
+@media screen and (max-width: 390px) {
+  .products__item {
+    width: 100%;
+  }
+
+  .products_img {
+    height: 180px;
+  }
+
+  .products_title {
+    font-size: 17px;
+  }
+
+  .product_price {
+    font-size: 17px;
+  }
+
+  .products_small {
+    font-size: 12px;
+  }
+
+  .products_btn {
+    height: 38px;
+    font-size: 13px;
+  }
+}
+
+/* ========================= */
+/* iPhone 13 Mini / iPhone SE */
+/* ========================= */
+@media screen and (max-width: 375px) {
+  .products__item {
+    width: 100%;
+  }
+
+  .products_img {
+    height: 165px;
+  }
+
+  .products_title {
+    font-size: 16px;
+  }
+
+  .product_price {
+    font-size: 16px;
+  }
+
+  .products_small {
+    font-size: 11px;
+    padding: 4px 8px;
+  }
+
+  .products_btn {
+    height: 36px;
+    font-size: 12px;
+  }
+}
+
+/* ========================= */
+/* Juda kichik telefonlar */
+/* ========================= */
+@media screen and (max-width: 320px) {
+  .products_img {
+    height: 150px;
+  }
+
+  .products_title {
+    font-size: 15px;
+  }
+
+  .product_price {
+    font-size: 15px;
+  }
+
+  .products_btn {
+    font-size: 11px;
+    height: 34px;
+  }
+}

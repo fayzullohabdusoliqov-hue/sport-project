@@ -114,22 +114,17 @@
 @media (max-width:768px){
 
     .logout__wraper{
-        flex-direction:column;
+        display: flex;
+        align-items: center;
         justify-content:center;
-        gap:30px;
-        padding:20px;
-        height:auto;
-        min-height:100vh;
     }
 
     .logout_image{
-        width:70%;
-        height:auto;
-        max-height:300px;
+        display: none;
     }
 
     .logout__form{
-        width:90%;
+        width:100%;
         max-width:350px;
         height:auto;
         padding:25px;
@@ -148,20 +143,8 @@
 ========================= */
 @media (max-width:430px){
 
-    .logout__wraper{
-        flex-direction:column;
-        justify-content:center;
-        align-items:center;
-        gap:20px;
-        padding:20px 15px;
-        height:auto;
-        min-height:100vh;
-    }
-
     .logout_image{
-        width:80%;
-        height:auto;
-        max-height:220px;
+        display: none;
     }
 
     .logout__form{
@@ -190,11 +173,6 @@
    iPhone 13 mini
 ========================= */
 @media (max-width:375px){
-
-    .logout_image{
-        max-height:180px;
-    }
-
     .logout__form{
         padding:18px;
     }
@@ -215,11 +193,6 @@
    Juda kichik ekranlar
 ========================= */
 @media (max-width:320px){
-
-    .logout_image{
-        max-height:150px;
-    }
-
     .logout__form{
         padding:15px;
     }

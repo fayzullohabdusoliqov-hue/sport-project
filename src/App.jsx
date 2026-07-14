@@ -13,6 +13,7 @@ import AdminTeacher from './pages/Teacher/AdminTeacher'
 import AdminGroup from './pages/Group/AdminGroup'
 import AdminGroupDetail from './pages/GroupDetail/AdminGroupDetail'
 import AdminWorker from './pages/Worker/AdminWorker'
+import OperatorShop from './pages/Shop/OperatorShop'
 
 function App() {
   const router = createBrowserRouter([
@@ -83,6 +84,10 @@ function App() {
         {
           path: "home",
           element: <OperatorHome/>
+        },
+        {
+          path: "shop",
+          element: <OperatorShop/>
         }
       ]
     }
