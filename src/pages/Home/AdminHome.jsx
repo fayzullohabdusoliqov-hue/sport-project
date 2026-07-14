@@ -10,10 +10,10 @@ function AdminHome() {
   const [roules, setRoules] = useState(0)
   const [products, setProducts] = useState(0)
   const [groups, setGroups] = useState(0)
-  const [monthlyTeachers, setMonthlyTeachers] = useState([])
-  const [monthlyWorkers, setMonthlyWorkers] = useState([])
-  const [monthlyStudents, setMonthlyStudents] = useState([])
-  const [monthlyProducts, setMonthlyProducts] = useState([])
+  const [monthlyTeachers, setMonthlyTeachers] = useState(0)
+  const [monthlyWorkers, setMonthlyWorkers] = useState(0)
+  const [monthlyStudents, setMonthlyStudents] = useState(0)
+  const [monthlyProducts, setMonthlyProducts] = useState(0)
   const [monthlyRent, setMonthlyRent] = useState(0)
   const [profit, setProfit] = useState(0)
 
@@ -25,6 +25,12 @@ function AdminHome() {
       if(data){
         const array = await Object.values(data)
         setTeachers(array.length)
+
+        let monthlyTeachers = 0
+        for(let i = 0; i < array.length; i++){
+          monthlyTeachers += Number(array[i].monthlySalary)
+        }
+        setMonthlyTeachers(monthlyTeachers)
       }else{
         setTeachers(0)
       }
@@ -40,23 +46,20 @@ function AdminHome() {
       if(data){
         const array = await Object.values(data)
         const students = array.map((el) => el.students ? el.students.length : 0)
-        const filterStudent = array.map((el) => el.students)
-        
-        let everyStudent = []
-        for(let i = 0; i < filterStudent; i++){
-          everyStudent = [...everyStudent, ...filterStudent[i]]
-          console.log(everyStudent)
-        }
 
         let everyStudents = 0
         let monthlyStudent = 0
         for(let i = 0; i < students.length; i++){
           everyStudents += students[i]
         }
-        for(let i = 0; i < studentsSum.length; i++){
-          monthlyStudent += Number(studentsSum[i])
-          console.log(monthlyStudent)
+        for (let i = 0; i < array.length; i++) {
+          const students = array[i].students;
+
+          for (let j = 0; j < students.length; j++) {
+            monthlyStudent += Number(students[j].monthlySum)
+          }
         }
+        setMonthlyStudents(monthlyStudent)
         setStudents(everyStudents)
       }else{
         setStudents(0)
@@ -75,6 +78,26 @@ function AdminHome() {
         setWorkers(array.length)
       }else{
         setWorkers(0)
+      }
+    }catch(err){
+      console.log(err.message)
+    }
+  }
+  async function getMonthlyWorker(){
+    try{
+      const res = await fetch("https://sport-project-18919-default-rtdb.firebaseio.com/workers.json")
+      const data = await res.json()
+
+      if(data){
+        const array = await Object.values(data)
+
+        let monthlyWorkers = 0
+        for(let i = 0; i < array.length; i++){
+          monthlyWorkers += Number(array[i].monthlySalary)
+        }
+        setMonthlyWorkers(monthlyWorkers)
+      }else{
+        setMonthlyWorkers(0)
       }
     }catch(err){
       console.log(err.message)
@@ -102,7 +125,14 @@ function AdminHome() {
       
       if(data){
         const array = await Object.values(data)
+        console.log(array)
         setProducts(array.length)
+
+        let monthlyProducts = 0
+        for(let i = 0; i < array.length; i++){
+          monthlyProducts += Number(array[i].price) * Number(array[i].howMany)
+        }
+        setMonthlyProducts(monthlyProducts)
       }else{
         setProducts(0)
       }
@@ -130,6 +160,7 @@ function AdminHome() {
     getTeachers()
     getStudents()
     getWorkers()
+    getMonthlyWorker()
     getRoules()
     getProducts()
     getGroups()
@@ -150,10 +181,10 @@ function AdminHome() {
     <section className="results">
       <h2 className="results_title">RESULTS</h2>
       <div className="results__wraper">
-        <ResultCardAdminHome title={"Ishchilarning oyligi"} info={0}/>
-        <ResultCardAdminHome title={"O'qtuvchilarning oyligi"} info={0}/>
-        <ResultCardAdminHome title={"Maxsulotlardan kelgan oylik"} info={0}/>
-        <ResultCardAdminHome title={"O'quvchilardan keladigan pul"} info={0}/>
+        <ResultCardAdminHome title={"Ishchilarning oyligi"} info={monthlyWorkers + monthlyTeachers}/>
+        <ResultCardAdminHome title={"O'qtuvchilarning oyligi"} info={monthlyTeachers}/>
+        <ResultCardAdminHome title={"Maxsulot sotilgandan keying pul"} info={monthlyProducts}/>
+        <ResultCardAdminHome title={"O'quvchilardan keladigan pul"} info={monthlyStudents}/>
       </div>
     </section>
   </main>)

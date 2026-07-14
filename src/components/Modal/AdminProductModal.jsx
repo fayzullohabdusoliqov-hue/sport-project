@@ -53,10 +53,20 @@ function AdminProductModal({setOpenModal, firebaseKey}) {
   }
   
   async function getProduct(){
+    if(firebaseKey) return;
+
     try{
       const res = await fetch(`https://sport-project-18919-default-rtdb.firebaseio.com/products/${firebaseKey}.json`)
       const data = await res.json()
-      setProduct(data)
+
+      if (data) {
+        setProduct({
+          name: data.name ?? "",
+          image: data.image ?? "",
+          price: data.price ?? 0,
+          howMany: data.howMany ?? 0,
+        })
+      }
     }catch(err){
       console.log(err.message)
     }
@@ -96,16 +106,16 @@ function AdminProductModal({setOpenModal, firebaseKey}) {
         }} value={product?.name}/>
       </div>
       <div className="product__form-content">
-        <label htmlFor="howMany" className="product_label">qancha borligi:</label>
-        <input id='howMany' type="number" className="product_input" onChange={(evt) => {
+        <label htmlFor="howManys" className="product_label">qancha borligi:</label>
+        <input id='howManys' type="number" className="product_input" onChange={(evt) => {
           setProduct({...product, howMany: evt.target.value})
-        }} value={Number(product?.howMany)}/>
+        }} defaultValue={Number(product?.howMany)}/>
       </div>
       <div className="product__form-content">
         <label htmlFor="price" className="product_label">narxi:</label>
         <input id='price' type="number" className="product_input" onChange={(evt) => {
           setProduct({...product, price: evt.target.value})
-        }} value={Number(product?.price)}/>
+        }} defaultValue={Number(product?.price)}/>
       </div>
       <button className="product_btn">Jo'natish</button>
     </form>
