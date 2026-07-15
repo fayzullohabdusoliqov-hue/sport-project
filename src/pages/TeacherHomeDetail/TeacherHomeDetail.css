@@ -1,0 +1,254 @@
+.teacherDetail{
+    width: 100%;
+    min-height: 100vh;
+    background: var(--background);
+    color: var(--text);
+    padding: 30px;
+}
+
+.teacherDetail__top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px 25px;
+    margin-bottom: 25px;
+    box-shadow: var(--shadow);
+}
+
+.teacherDetail__top h1{
+    font-size: 30px;
+    margin-bottom: 6px;
+}
+
+.teacherDetail__top p{
+    color: var(--text-hover);
+}
+
+.teacherDetail__top h2{
+    color: var(--primary);
+}
+
+.teacherDetail__tableWrapper{
+    width: 100%;
+    overflow: auto;
+    max-height: 75vh;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    background: var(--surface);
+    box-shadow: var(--shadow);
+}
+
+.teacherDetail__table{
+    width: 100%;
+    min-width: 900px;
+    border-collapse: collapse;
+}
+
+.teacherDetail__table thead{
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.teacherDetail__table thead tr{
+    background: var(--gradient);
+}
+
+.teacherDetail__table th{
+    padding: 15px;
+    color: white;
+    font-size: 15px;
+    border: 1px solid var(--border);
+    white-space: nowrap;
+}
+
+.teacherDetail__table td{
+    padding: 13px;
+    text-align: center;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    transition: .25s;
+}
+
+.teacherDetail__table tbody tr:hover td{
+    background: rgba(229,9,20,.08);
+}
+
+.teacherDetail__table tfoot td{
+    padding: 16px;
+    font-size: 18px;
+    font-weight: 700;
+    background: var(--surface-2);
+}
+
+.badge{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 85px;
+    padding: 8px 12px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 700;
+    color: white;
+}
+
+.present{
+    background:#16a34a;
+}
+
+.absent{
+    background:#dc2626;
+}
+
+.late{
+    background:#eab308;
+    color:#111;
+}
+
+.empty{
+    background:#555;
+}
+
+.percentBadge{
+    display:inline-flex;
+    justify-content:center;
+    align-items:center;
+    min-width:65px;
+    padding:7px 12px;
+    border-radius:25px;
+    background:var(--primary);
+    color:white;
+    font-weight:700;
+}
+
+.attendanceModal{
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.65);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:999;
+    backdrop-filter: blur(6px);
+}
+
+.attendanceModal__content{
+    width:380px;
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    padding:30px;
+    box-shadow:var(--shadow);
+    animation: modal .25s ease;
+}
+
+@keyframes modal{
+    from{
+        transform:scale(.8);
+        opacity:0;
+    }
+    to{
+        transform:scale(1);
+        opacity:1;
+    }
+}
+
+.attendanceModal__content h2{
+    text-align:center;
+    margin-bottom:25px;
+}
+
+.presentBtn,
+.absentBtn,
+.lateBtn,
+.closeBtn{
+    width:100%;
+    border:none;
+    padding:14px;
+    border-radius:var(--radius);
+    font-size:16px;
+    font-weight:700;
+    cursor:pointer;
+    margin-top:12px;
+    transition:.25s;
+}
+
+.presentBtn{
+    background:#16a34a;
+    color:white;
+}
+
+.presentBtn:hover{
+    transform:translateY(-2px);
+}
+
+.absentBtn{
+    background:#dc2626;
+    color:white;
+}
+
+.absentBtn:hover{
+    transform:translateY(-2px);
+}
+
+.lateBtn{
+    background:#eab308;
+    color:#111;
+}
+
+.lateBtn:hover{
+    transform:translateY(-2px);
+}
+
+.closeBtn{
+    background:var(--surface-2);
+    color:white;
+}
+
+.closeBtn:hover{
+    background:var(--primary);
+}
+
+.teacherDetail__tableWrapper::-webkit-scrollbar{
+    width:10px;
+    height:10px;
+}
+
+.teacherDetail__tableWrapper::-webkit-scrollbar-thumb{
+    background:var(--primary);
+    border-radius:20px;
+}
+
+.teacherDetail__tableWrapper::-webkit-scrollbar-track{
+    background:var(--surface);
+}
+
+@media(max-width:900px){
+
+.teacherDetail{
+    padding:15px;
+}
+
+.teacherDetail__top{
+    flex-direction:column;
+    gap:15px;
+    align-items:flex-start;
+}
+
+.teacherDetail__top h1{
+    font-size:24px;
+}
+
+.teacherDetail__table{
+    min-width:900px;
+}
+
+.attendanceModal__content{
+    width:92%;
+}
+
+}

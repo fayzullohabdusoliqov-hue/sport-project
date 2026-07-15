@@ -1,0 +1,56 @@
+.teacher{
+    padding:30px;
+}
+
+.teacher__title{
+    color:var(--text);
+    font-size:34px;
+    margin-bottom:30px;
+}
+
+.teacher__wrapper{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
+    gap:25px;
+}
+
+.teacher__card{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    padding:25px;
+    transition:.3s;
+    box-shadow:var(--shadow);
+}
+
+.teacher__card:hover{
+    transform:translateY(-8px);
+    border-color:var(--primary);
+}
+
+.teacher__card h2{
+    color:var(--primary);
+    margin-bottom:18px;
+}
+
+.teacher__card p{
+    color:var(--text);
+    margin-bottom:12px;
+}
+
+.teacher__card button{
+    width:100%;
+    height:45px;
+    margin-top:15px;
+    border:none;
+    border-radius:var(--radius);
+    background:var(--gradient);
+    color:white;
+    cursor:pointer;
+    font-weight:600;
+    transition:.3s;
+}
+
+.teacher__card button:hover{
+    background:var(--button-hover);
+}

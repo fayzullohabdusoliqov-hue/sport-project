@@ -26,7 +26,7 @@ function AdminTeacherModal({setOpenModal, firebaseKey}) {
           "Content-Type": "application/json"
         },
         body: JSON.stringify({
-          nmae: teacher.name,
+          name: teacher.name,
           password: teacher.password,
           role: "teacher",
         })
