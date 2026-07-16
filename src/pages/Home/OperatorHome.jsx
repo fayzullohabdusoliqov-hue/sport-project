@@ -118,7 +118,7 @@ function OperatorHome() {
 
   return (
     <>
-      <main className="site__main admin__main">
+      <main className="admin__main">
         <section className="operator__search">
           <h1 className="operator_title">SEARCH</h1>
 

@@ -27,7 +27,7 @@ function OperatorShop() {
     getProducts()
   },[])
 
-  return (<main className='site__main admin__main'>
+  return (<main className='admin__main'>
     <section className="shop">
       <h1 className="shop_title">EVERY PRODUCTS</h1>
       <div className="shop__wraper">

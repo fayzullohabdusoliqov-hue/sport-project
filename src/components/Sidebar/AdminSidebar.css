@@ -16,6 +16,10 @@
   margin: 0;
 }
 
+.sidebar_item {
+  width: 100%;
+}
+
 .sidebar_item a {
   display: flex;
   align-items: center;
@@ -42,134 +46,146 @@
 }
 
 .sidebar_item a:active {
-  transform: scale(0.97);
+  transform: scale(.97);
 }
-/* =========================
-   Desktop (1200px+)
-========================= */
-@media (min-width:1200px){
-    .site__sidebar{
-        width:100%;
-        min-height:100vh;
-        padding:30px 0;
-    }
 
-    .sidebar_item a{
-        padding:15px 20px;
-        font-size:17px;
-    }
+/* =========================
+   Desktop
+========================= */
+
+@media (min-width:1200px){
+
+  .site__sidebar{
+    padding:30px 0;
+  }
+
+  .sidebar_item a{
+    padding:16px 20px;
+    font-size:17px;
+  }
+
 }
 
 /* =========================
    Laptop
 ========================= */
+
 @media (max-width:1024px){
-    .site__sidebar{
-        padding:25px 0;
-    }
 
-    .sidebar_item a{
-        padding:13px 16px;
-        font-size:15px;
-    }
+  .site__sidebar{
+    padding:25px 0;
+  }
+
+  .sidebar_item a{
+    padding:13px 16px;
+    font-size:15px;
+  }
+
 }
 
 /* =========================
-   Tablet (iPad)
+   Tablet
 ========================= */
+
 @media (max-width:768px){
-    .site__sidebar{
-        padding:20px 0;
-    }
 
-    .sidebar__list{
-        padding:0 10px;
-    }
+  .site__sidebar{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;          /* min-height emas */
+    min-height: 70px;
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    border-right: none;
+    padding: 0;
+    z-index: 1000;
+    overflow: hidden;
+  }
 
-    .sidebar_item a{
-        padding:12px 15px;
-        font-size:15px;
-    }
+  .sidebar__list{
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: row !important;
+    justify-content: space-evenly;
+    align-items: center;
+
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .sidebar_item{
+    flex: 1;
+    width: auto;
+  }
+
+  .sidebar_item a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 50px;
+
+    padding: 0;
+    margin: 0;
+
+    font-size: 14px;
+  }
 }
 
 /* =========================
-   Telefonlar
-   iPhone 13
-   iPhone 15
-   Samsung
-   Redmi
+   iPhone 15 / 14 / 13
 ========================= */
+
 @media (max-width:430px){
 
-    .site__sidebar{
-        position:fixed;
-        left:0;
-        right:0;
-        bottom:-100%;
-        top:auto;
+  .site__sidebar{
+    min-height:65px;
+    padding:8px 0;
+  }
 
-        width:100%;
-        min-height:320px;
-        max-height:75vh;
+  .sidebar_item a{
+    font-size:13px;
+    padding:10px 2px;
+  }
 
-        padding:25px 20px;
-
-        border-radius:25px 25px 0 0;
-        border-top:1px solid var(--border);
-        border-right:none;
-
-        background:var(--surface);
-        box-shadow:0 -10px 30px rgba(0,0,0,.3);
-
-        transition:.4s;
-        z-index:1000;
-        overflow-y:auto;
-    }
-
-    /* Sidebar ochilganda */
-    .site__sidebar.active{
-        bottom:0;
-    }
-
-    .sidebar__list{
-        padding:0;
-        gap:12px;
-    }
-
-    .sidebar_item a{
-        padding:15px;
-        font-size:15px;
-    }
 }
 
 /* =========================
-   iPhone 13 mini
+   iPhone SE
 ========================= */
+
 @media (max-width:375px){
 
-    .site__sidebar{
-        min-height:280px;
-        padding:20px 15px;
-    }
+  .site__sidebar{
+    min-height:60px;
+  }
 
-    .sidebar_item a{
-        padding:13px;
-        font-size:14px;
-    }
+  .sidebar_item a{
+    font-size:12px;
+    padding:8px 2px;
+  }
+
 }
 
 /* =========================
-   Juda kichik ekranlar
+   Very Small Phones
 ========================= */
+
 @media (max-width:320px){
 
-    .site__sidebar{
-        min-height:250px;
-        padding:15px;
-    }
+  .site__sidebar{
+    min-height:55px;
+  }
 
-    .sidebar_item a{
-        padding:12px;
-        font-size:13px;
-    }
+  .sidebar_item a{
+    font-size:11px;
+    padding:8px 0;
+  }
+
 }

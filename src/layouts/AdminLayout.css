@@ -128,10 +128,14 @@
 /* =========================
    iPhone 13 mini
 ========================= */
-@media (max-width:375px){
+@media (max-width:360px){
+    .admin__header{
+        grid-template-columns:240px 1fr;
+        grid-template-rows:100px 1fr;
+    }
 
     .site__header{
-        height:65px;
+        height:80px;
     }
 
     .site__main{
@@ -160,6 +164,9 @@
 
     .admin__main{
         padding:10px;
+        
+        grid-template-columns:240px 1fr;
+        grid-template-rows:100px 1fr;
     }
 
 }
